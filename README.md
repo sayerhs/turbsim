@@ -27,3 +27,8 @@ make install                       # Install into central directory
 
 Please consult the official NWTC download portal for License, Disclaimer, and
 documentation.
+
+# Version Information
+
+* NWTC_Library v1.07.02a-mlb, 21-May-2013
+* TurbSim v1.06.00, 21-Sep-2012
