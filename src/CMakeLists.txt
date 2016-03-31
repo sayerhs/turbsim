@@ -9,9 +9,15 @@ set(CMAKE_INSTALL_PREFIX ${default_install} CACHE string
   "Choose installation directory; default turbsim/install" FORCE)
 option(BUILD_SHARED_LIBS "Enabled building shared libraries" off)
 
+# Set default build type to be RELEASE
+if (NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING
+    "Choose the build type: Debug Release MinSizeRel" FORCE)
+endif (NOT CMAKE_BUILD_TYPE)
+
 # Check for BLAS and LAPACK libraries
-find_package(BLAS REQUIRED)
-find_package(LAPACK REQUIRED)
+#find_package(BLAS REQUIRED)
+#find_package(LAPACK REQUIRED)
 
 # Set user selectable option to turn on/off double precision
 option(DOUBLE_PRECISION "If ON, use double precision for REAL" on)
