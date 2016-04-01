@@ -1,6 +1,6 @@
 
 cmake_minimum_required(VERSION 2.8.12)
-project(TURBSIM Fortran C CXX)
+project(TURBSIM Fortran C)
 
 # Set default installation directory
 get_filename_component(default_install
@@ -37,6 +37,10 @@ if (FCNAME MATCHES "gfortran.*")
 
   if (DOUBLE_PRECISION)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fdefault-real-8")
+  endif(DOUBLE_PRECISION)
+elseif (FCNAME MATCHES "ifort.*")
+  if (DOUBLE_PRECISION)
+    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -r8 -double_size 128")
   endif(DOUBLE_PRECISION)
 endif (FCNAME MATCHES "gfortran.*")
 
